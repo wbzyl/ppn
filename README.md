@@ -87,4 +87,5 @@ Wprowadzamy następujące zmiany w ustawieniach:
 * description: Notatki do zajęć „Przygotowywanie publikacji naukowych”
 
 
-## Pierwszy wpis
+## Pierwszy wpis na *http://wbzyl.github.com/ppn/*
+
