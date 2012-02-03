@@ -8,7 +8,7 @@ Zaczynamy!
 * [Web Equation](http://webdemo.visionobjects.com/equation.html?locale=default)
 
 
-## Blogowanie na GitHub-ie
+## Blog na GitHub:Pages
 
 Tworzymy bloga, korzystając z gotowego szablonu
 Octopress. Publikujemy bloga, korzystając z  *github:pages*.
@@ -70,6 +70,18 @@ Przykładowo, w Fedorze wykonujemy:
 
 Niepotrzebne w wersji 2.0?
 
+Kod na ciemnoniebieskim tle jest nieczytelny. Dlatego zmieniamy
+tło na *solarized light*.
+
+W tym celu w pliku *sass/custom/_colors.scss* odkomentowujemy:
+
+    /* To use the light Solarized highlighting theme uncomment the following line */
+    $solarized: light;
+
+i w pliku *sass/partials/_syntax.scss* zmieniamy czarny kolor na biały:
+
+    .highlight code { @extend .pre-code; background: white;}
+
 
 ## Konfiguracja bloga
 
@@ -88,4 +100,23 @@ Wprowadzamy następujące zmiany w ustawieniach:
 
 
 ## Pierwszy wpis na *http://wbzyl.github.com/ppn/*
+
+Pierwszy wpis będzie o tym jak dodać MathJax:
+
+    rake new_post["MathJax"]
+
+*TODO:* Wpisujemy co trzeba gdzie trzeba.
+
+Następnie:
+
+    rake generate
+    rake preview  # uruchamiamy serwer www na localhost:4000
+
+Aby obejrzeć wygenerowany wpis, wchodzimy na stronę:
+
+    http://localhost:4000/ppn
+
+Jeśli wszystko jest ok, to wykonujemy:
+
+    rake deploy
 
