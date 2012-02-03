@@ -82,6 +82,9 @@ i w pliku *sass/partials/_syntax.scss* zmieniamy czarny kolor na biały:
 
     .highlight code { @extend .pre-code; background: white;}
 
+Zmieniamy domyślną wielkość fontu */sass/custom/_styles.scss*:
+
+
 
 ## Konfiguracja bloga
 
@@ -93,26 +96,30 @@ i w pliku *sass/partials/_syntax.scss* zmieniamy czarny kolor na biały:
 Podstawowe ustawienia bloga są zawarte w pliku *_config.yml*.
 Wprowadzamy następujące zmiany w ustawieniach:
 
-* url: http://wbzyl.github.com/ppn – **zostawiamy bez zmian!**
-* tytuł: PPN
+* url: http://wbzyl.github.com/ppn — **zostawiamy bez zmian!**
+* title: Przygotowywanie Publikacji Naukowych
+* subtitle: Blog hakerów TeX-owych
 * author: Włodek Bzyl
+* simple_search: http://google.com/search — **zostawiamy bez zmian!**
 * description: Notatki do zajęć „Przygotowywanie publikacji naukowych”
 
 
-## Pierwszy wpis na *http://wbzyl.github.com/ppn/*
+## Pierwszy wpis na http://wbzyl.github.com/ppn/
 
-Pierwszy wpis będzie o tym jak dodać MathJax:
+Pierwszy wpis będzie o tym jak dodać MathJax do bloga:
 
     rake new_post["MathJax"]
 
-*TODO:* Wpisujemy co trzeba gdzie trzeba.
+Używając notacji [Markdown](http://www.ctrlshift.net/project/markdowneditor/)
+oraz od czasu do czasu znaczników HTML wpisujemy
+tekst postu.
 
-Następnie:
+Następnie wykonujemy:
 
     rake generate
     rake preview  # uruchamiamy serwer www na localhost:4000
 
-Aby obejrzeć wygenerowany wpis, wchodzimy na stronę:
+Wygenerowany wpis oglądamy na stronie:
 
     http://localhost:4000/ppn
 
