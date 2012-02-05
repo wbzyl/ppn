@@ -1,18 +1,18 @@
 # Przygotowywanie publikacji naukowych
 
-Zaczynamy:
-
-* Wiki
-* Blog
+* PPN Wiki – szablony, przykładowy kod, itp.
+* PPN Blog – MathJax, zapisywanie wyrażeń matematycznych, itp.
 
 
-## Blog na GitHub:Pages
+## Blog PPN na GitHub:Pages
 
-Tworzymy bloga, korzystając z gotowego szablonu
-Octopress. Publikujemy bloga, korzystając z  *github:pages*.
+Blog PPN korzysta z gotowego szablonu
+[Octopress](https://github.com/imathis/octopress) dla
+[Jekylla](https://github.com/mojombo/jekyll).
 
+Bloga prygotowujemy i wdrażamy w dwóch krokach.
 
-### Tworzymy gałąź *gh-pages* w repozytorium *ppn*
+### 1. Tworzymy gałąź *gh-pages* w repozytorium *ppn*
 
 * [Introduction to Pages](http://pages.github.com/)
 
@@ -23,10 +23,10 @@ Project Pages:
     rm .git/index
     git clean -fdx
 
-### Instalujemy *Octopress*
+### 2. Instalujemy szablon *Octopress*
 
-- [Setup](http://octopress.org/docs/setup/)
-- [Deploying to Github Pages](http://octopress.org/docs/deploying/github/)
+* [Setup](http://octopress.org/docs/setup/)
+* [Deploying to Github Pages](http://octopress.org/docs/deploying/github/)
 
 Setup Octopress:
 
@@ -48,19 +48,10 @@ Wpisujemy:
 
 Na koniec wykonujemy:
 
-    rake deploy
+    bin/rake deploy
 
 I już! Gotowe. Możemy wejść na stronę blog.
 (Musimy poczekać ok. 10 minut.)
-
-
-### Instalujemy lokalnie
-
-Przykładowa instalacja [Pygments](http://pygments.org/) w Fedorze:
-
-    sudo yum install python-setuptools
-    easy_install --user Pygments
-    export PATH=$PATH:$HOME/.local/bin  # dopisujemy do .bash_profile
 
 
 ## Konfiguracja bloga
@@ -72,15 +63,15 @@ wiersz z `$solarized` w pliku *sass/custom/_colors.scss*:
     /* To use the light Solarized highlighting theme uncomment the following line */
     $solarized: light;
 
-oraz zmieniając w pliku *sass/partials/_syntax.scss*
-czarny kolor tła na biały:
+oraz zmieniając w pliku *sass/partials/_syntax.scss* czarny kolor tła na biały:
 
     .highlight code { @extend .pre-code; background: white;}
 
 Przy okazji zwiększamy domyślną wielkość fontu */sass/custom/_styles.scss*.
+Domyślna wielkość jest zdecydowanie za mała.
 
 Podstawowe ustawienia bloga są zawarte w pliku *_config.yml*.
-Wprowadzamy następujące zmiany w ustawieniach:
+Wprowadzamy następujące zmiany w domyślnych ustawieniach:
 
 * url: http://wbzyl.github.com/ppn — **zostawiamy bez zmian!**
 * title: Przygotowywanie Publikacji Naukowych
@@ -89,11 +80,11 @@ Wprowadzamy następujące zmiany w ustawieniach:
 * simple_search: http://google.com/search — **zostawiamy bez zmian!**
 * description: Notatki do zajęć „Przygotowywanie publikacji naukowych”
 
-Podstawowe polecenia:
+Blog na co dzień:
 
-    rake generate  # generuje nowe wersje stron
-    rake preview   # lokalny podgląd na localhost:4000/ppn
-    rake deploy    # wdrażanie nowej wersji na Githubie
+    bin/rake generate  # generuje nowe wersje stron
+    bin/rake preview   # lokalny podgląd na localhost:4000/ppn
+    bin/rake deploy    # wdrażanie nowej wersji na Githubie
 
 
 ## Pierwszy wpis na http://wbzyl.github.com/ppn/
@@ -105,4 +96,13 @@ Pierwszy wpis będzie o tym jak dodać MathJax do bloga:
 Używając notacji [Markdown](http://www.ctrlshift.net/project/markdowneditor/)
 oraz od czasu do czasu znaczników HTML wpisujemy
 tekst postu.
+
+
+## Różne rzeczy…
+
+Przykładowa instalacja [Pygments](http://pygments.org/) w Fedorze:
+
+    sudo yum install python-setuptools
+    easy_install --user Pygments        # instaluj lokalnie
+    export PATH=$PATH:$HOME/.local/bin  # dopisujemy do .bash_profile
 
