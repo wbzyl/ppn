@@ -10,7 +10,7 @@ Blog PPN korzysta z gotowego szablonu
 [Octopress](https://github.com/imathis/octopress) dla
 [Jekylla](https://github.com/mojombo/jekyll).
 
-Bloga prygotowujemy i wdrażamy w dwóch krokach.
+Bloga wdrażamy w dwóch krokach.
 
 ### 1. Tworzymy gałąź *gh-pages* w repozytorium *ppn*
 
