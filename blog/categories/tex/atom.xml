@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: tex | Przygotowywanie Publikacji Naukowych]]></title>
+  <link href="http://wbzyl.github.com/ppn/blog/categories/tex/atom.xml" rel="self"/>
+  <link href="http://wbzyl.github.com/ppn/"/>
+  <updated>2012-02-18T14:38:13+01:00</updated>
+  <id>http://wbzyl.github.com/ppn/</id>
+  <author>
+    <name><![CDATA[Włodek Bzyl]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[MathJax]]></title>
+    <link href="http://wbzyl.github.com/ppn/blog/2012/02/02/dodajemy-mathjax/"/>
+    <updated>2012-02-02T23:45:00+01:00</updated>
+    <id>http://wbzyl.github.com/ppn/blog/2012/02/02/dodajemy-mathjax</id>
+    <content type="html"><![CDATA[<p>1. Dopisujemy do <em>source/_includes/custom/head.html</em>:</p>
+
+<pre><code>&lt;script type="text/x-mathjax-config"&gt;
+MathJax.Hub.Config({
+  extensions: ["jsMath2jax.js"],
+  tex2jax: {
+    inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+    displayMath: [ ['$$', '$$'], ["\\[", "\\]"] ],
+    processEscapes: true
+  },
+
+  "HTML-CSS": { scale: 105 },
+
+  displayAlign: "left",
+  displayIndent: "2em",
+
+  styles: {
+    ".MathJax_Display": { "color": "#A00" },
+    ".MathJax": { "color": "#A00" }
+  }
+});
+&lt;/script&gt;
+&lt;script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"&gt;&lt;/script&gt;
+</code></pre>
+
+<p>Zobacz też <a href="http://www.mathjax.org/docs/1.1/options/index.html">Configuration Objects</a>.</p>
+
+<p>2. Wzory wystawione wpisujemy tak:</p>
+
+<p>```html</p>
+
+<div class=math>
+\int\! f(x)\,dx \lt \infty
+</div>
+
+
+<p>```</p>
+
+<p>Oto rezultat:</p>
+
+<div class=math>
+\int\! f(x)\,dx \lt \infty
+</div>
+
+
+<p>3. Wzory w akapicie wpisujemy tak:</p>
+
+<p><code>html
+Euler formula: $e^{i\pi} + 1 = 0$.
+</code></p>
+
+<p>Oto rezultat:</p>
+
+<p>Euler formula: $e^{i\pi} + 1 = 0$.</p>
+
+
+<p>4. Nie każde polecenia LaTeX-a jest poprawnie renderowane przez MathJax.
+ Lista poleceń poprawnie interpretowanych jest tutaj:
+<a href="http://www.mathjax.org/docs/1.1/tex.html#supported-latex-commands">Supported LaTeX commands</a>.</p>
+
+<h2>Web Equation</h2>
+
+<p>Co to jest? Wchodzimy na stronę
+<a href="http://webdemo.visionobjects.com/equation.html?locale=default">Web Equation</a>
+i wszystko jasne!</p>
+
+<p>Więcej wzorów jest na portalu <a href="http://www.mathjax.org/">MathJax</a>
+w dziale <a href="http://www.mathjax.org/demos/tex-samples/">TeX Samples</a>.</p>
+]]></content>
+  </entry>
+  
+</feed>

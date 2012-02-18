@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Przygotowywanie Publikacji Naukowych</title>
+  <title>R na co dzień - Przygotowywanie Publikacji Naukowych</title>
   <meta name="author" content="Włodek Bzyl">
 
   
@@ -20,7 +20,7 @@ ls &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://wbzyl.github.com/ppn">
+  <link rel="canonical" href="http://wbzyl.github.com/ppn/blog/2012/02/17/r-na-co-dzien">
   <link href="/ppn/favicon.png" rel="icon">
   <link href="/ppn/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/ppn/javascripts/modernizr-2.0.js"></script>
@@ -87,15 +87,12 @@ MathJax.Hub.Config({
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/ppn/blog/2012/02/17/r-na-co-dzien/">R na co dzień</a></h1>
+      <h1 class="entry-title">R na co dzień</h1>
     
     
       <p class="meta">
@@ -118,7 +115,7 @@ MathJax.Hub.Config({
   </header>
 
 
-  <div class="entry-content"><p>Możemy pracować na konsoli R albo korzystając z trybu <em>ESS</em> w Emacsie.</p>
+<div class="entry-content"><p>Możemy pracować na konsoli R albo korzystając z trybu <em>ESS</em> w Emacsie.</p>
 
 <p>Polecenia, które wykonujemy codziennie:</p>
 
@@ -190,22 +187,16 @@ graphics.off<span class="p">()</span>
 </code></pre></div></figure>
 
 </div>
-  
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/ppn/blog/2012/02/02/dodajemy-mathjax/">MathJax</a></h1>
-    
-    
-      <p class="meta">
-        
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Włodek Bzyl</span></span>
+
+      
 
 
 
@@ -217,91 +208,38 @@ graphics.off<span class="p">()</span>
   
 
 
-<time datetime="2012-02-02T23:45:00+01:00" pubdate data-updated="true">2012-02-02</time>
-        
-      </p>
+<time datetime="2012-02-17T17:25:00+01:00" pubdate data-updated="true">2012-02-17</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/ppn/blog/categories/math/'>math</a>, <a class='category' href='/ppn/blog/categories/r/'>r</a>, <a class='category' href='/ppn/blog/categories/tools/'>tools</a>
+  
+</span>
+
+
+    </p>
     
-  </header>
-
-
-  <div class="entry-content"><p>1. Dopisujemy do <em>source/_includes/custom/head.html</em>:</p>
-
-<pre><code>&lt;script type="text/x-mathjax-config"&gt;
-MathJax.Hub.Config({
-  extensions: ["jsMath2jax.js"],
-  tex2jax: {
-    inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
-    displayMath: [ ['$$', '$$'], ["\\[", "\\]"] ],
-    processEscapes: true
-  },
-
-  "HTML-CSS": { scale: 105 },
-
-  displayAlign: "left",
-  displayIndent: "2em",
-
-  styles: {
-    ".MathJax_Display": { "color": "#A00" },
-    ".MathJax": { "color": "#A00" }
-  }
-});
-&lt;/script&gt;
-&lt;script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"&gt;&lt;/script&gt;
-</code></pre>
-
-<p>Zobacz też <a href="http://www.mathjax.org/docs/1.1/options/index.html">Configuration Objects</a>.</p>
-
-<p>2. Wzory wystawione wpisujemy tak:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><pre><code class='html'><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">math</span><span class="nt">&gt;</span>
-\int\! f(x)\,dx \lt \infty
-<span class="nt">&lt;/div&gt;</span>
-</code></pre></div></figure>
-
-
-<p>Oto rezultat:</p>
-
-<div class=math>
-\int\! f(x)\,dx \lt \infty
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://wbzyl.github.com/ppn/blog/2012/02/17/r-na-co-dzien/" data-via="wbzyl" data-counturl="http://wbzyl.github.com/ppn/blog/2012/02/17/r-na-co-dzien/" >Tweet</a>
+  
+  
+  
 </div>
 
-
-<p>3. Wzory w akapicie wpisujemy tak:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><pre><code class='html'>Euler formula: $e^{i\pi} + 1 = 0$.
-</code></pre></div></figure>
-
-
-<p>Oto rezultat:</p>
-
-<p>Euler formula: $e^{i\pi} + 1 = 0$.</p>
-
-
-<p>4. Nie każde polecenia LaTeX-a jest poprawnie renderowane przez MathJax.
- Lista poleceń poprawnie interpretowanych jest tutaj:
-<a href="http://www.mathjax.org/docs/1.1/tex.html#supported-latex-commands">Supported LaTeX commands</a>.</p>
-
-<h2>Web Equation</h2>
-
-<p>Co to jest? Wchodzimy na stronę
-<a href="http://webdemo.visionobjects.com/equation.html?locale=default">Web Equation</a>
-i wszystko jasne!</p>
-
-<p>Więcej wzorów jest na portalu <a href="http://www.mathjax.org/">MathJax</a>
-w dziale <a href="http://www.mathjax.org/demos/tex-samples/">TeX Samples</a>.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  <div class="pagination">
     
-    <a href="/ppn/blog/archives">Blog Archives</a>
-    
-  </div>
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/ppn/blog/2012/02/02/dodajemy-mathjax/" title="Previous Post: MathJax">&laquo; MathJax</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
 </div>
+
 <aside class="sidebar">
   
     <section>
@@ -323,7 +261,7 @@ w dziale <a href="http://www.mathjax.org/demos/tex-samples/">TeX Samples</a>.</
 <section>
   <h1>Latest Tweets</h1>
   <ul id="tweets">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   <script type="text/javascript">
     $.domReady(function(){
@@ -342,6 +280,7 @@ w dziale <a href="http://www.mathjax.org/demos/tex-samples/">TeX Samples</a>.</
 
   
 </aside>
+
 
     </div>
   </div>

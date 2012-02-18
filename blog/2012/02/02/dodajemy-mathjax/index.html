@@ -5,13 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Przygotowywanie Publikacji Naukowych</title>
+  <title>MathJax - Przygotowywanie Publikacji Naukowych</title>
   <meta name="author" content="Włodek Bzyl">
 
   
-  <meta name="description" content="Możemy pracować na konsoli R albo korzystając z trybu ESS w Emacsie. Polecenia, które wykonujemy codziennie: source(&quot;hello.r&quot;)
-objects()
-ls &hellip;">
+  <meta name="description" content="1. Dopisujemy do source/_includes/custom/head.html: &lt;script type="text/x-mathjax-config"&gt;
+MathJax.Hub.Config({ extensions: ["jsMath2jax.js"], &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,7 +19,7 @@ ls &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://wbzyl.github.com/ppn">
+  <link rel="canonical" href="http://wbzyl.github.com/ppn/blog/2012/02/02/dodajemy-mathjax">
   <link href="/ppn/favicon.png" rel="icon">
   <link href="/ppn/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/ppn/javascripts/modernizr-2.0.js"></script>
@@ -87,121 +86,12 @@ MathJax.Hub.Config({
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/ppn/blog/2012/02/17/r-na-co-dzien/">R na co dzień</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-02-17T17:25:00+01:00" pubdate data-updated="true">2012-02-17</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Możemy pracować na konsoli R albo korzystając z trybu <em>ESS</em> w Emacsie.</p>
-
-<p>Polecenia, które wykonujemy codziennie:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><pre><code class='r'>source<span class="p">(</span><span class="s">&quot;hello.r&quot;</span><span class="p">)</span>
-objects<span class="p">()</span>
-ls<span class="p">()</span>
-
-z <span class="o">&lt;-</span> read.table<span class="p">(</span><span class="s">&quot;http://inf.ug.edu.pl/~wbzyl/r/2x2&quot;</span><span class="p">)</span>
-z
-  V1 V2
-<span class="m">1</span>  <span class="m">1</span>  <span class="m">2</span>
-<span class="m">2</span>  <span class="m">3</span>  <span class="m">4</span>
-
-save<span class="p">(</span>z<span class="p">)</span>
-
-rm<span class="p">(</span>z<span class="p">)</span>
-rm<span class="p">(</span>list <span class="o">=</span> ls<span class="p">())</span>
-
-load<span class="p">(</span>z<span class="p">)</span>
-
-methods<span class="p">(</span>ls<span class="p">)</span>
-methods<span class="p">(</span>class<span class="o">=</span><span class="s">&quot;default&quot;</span><span class="p">)</span>
-
-?ls
-
-x <span class="o">&lt;-</span> c<span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>
-class<span class="p">(</span>x<span class="p">)</span>
-  <span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="s">&quot;numeric&quot;</span>
-y <span class="o">&lt;-</span> as.character<span class="p">(</span>x<span class="p">)</span>
-  <span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="s">&quot;character&quot;</span>
-class<span class="p">(</span>y<span class="p">)</span>
-y
-  <span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="s">&quot;1&quot;</span> <span class="s">&quot;2&quot;</span> <span class="s">&quot;3&quot;</span>
-</code></pre></div></figure>
-
-
-<h3>Funkcje zwracające wektor</h3>
-
-<p>Na przykład:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><pre><code class='r'>z12 <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span>z<span class="p">)</span> <span class="kr">return</span><span class="p">(</span>c<span class="p">(</span>z<span class="p">,</span> z<span class="o">^</span><span class="m">2</span><span class="p">))</span>
-x <span class="o">=</span> <span class="m">1</span>:<span class="m">4</span>
-matrix<span class="p">(</span>z12<span class="p">(</span>x<span class="p">),</span> ncol<span class="o">=</span><span class="m">2</span><span class="p">)</span>
-     <span class="p">[,</span><span class="m">1</span><span class="p">]</span> <span class="p">[,</span><span class="m">2</span><span class="p">]</span>
-<span class="p">[</span><span class="m">1</span><span class="p">,]</span>    <span class="m">1</span>    <span class="m">1</span>
-<span class="p">[</span><span class="m">2</span><span class="p">,]</span>    <span class="m">2</span>    <span class="m">4</span>
-<span class="p">[</span><span class="m">3</span><span class="p">,]</span>    <span class="m">3</span>    <span class="m">9</span>
-<span class="p">[</span><span class="m">4</span><span class="p">,]</span>    <span class="m">4</span>   <span class="m">16</span>
-
-z12<span class="p">(</span>x<span class="p">)</span>
-
-<span class="p">[</span><span class="m">1</span><span class="p">]</span>  <span class="m">1</span>  <span class="m">2</span>  <span class="m">3</span>  <span class="m">4</span>  <span class="m">1</span>  <span class="m">4</span>  <span class="m">9</span> <span class="m">16</span>
-</code></pre></div></figure>
-
-
-<h2>Praca w trybie wsadowym</h2>
-
-<p>W pliku <em>rnorm_hist.r</em> wpisano następujące instrukcje:</p>
-
-<figure class='code'><figcaption><span>rnorm_hist.r</span></figcaption><div class="highlight"><pre><code class='r'>pdf<span class="p">(</span><span class="s">&quot;histogram.pdf&quot;</span><span class="p">)</span>
-hist<span class="p">(</span>rnorm<span class="p">(</span><span class="m">1024</span><span class="p">)</span>
-graphics.off<span class="p">()</span>
-</code></pre></div></figure>
-
-
-<p>Praca w trybie wsadowym:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><pre><code class='sh'>R --vanilla rnorm_hist.r
-</code></pre></div></figure>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/ppn/blog/2012/02/02/dodajemy-mathjax/">MathJax</a></h1>
+      <h1 class="entry-title">MathJax</h1>
     
     
       <p class="meta">
@@ -224,7 +114,7 @@ graphics.off<span class="p">()</span>
   </header>
 
 
-  <div class="entry-content"><p>1. Dopisujemy do <em>source/_includes/custom/head.html</em>:</p>
+<div class="entry-content"><p>1. Dopisujemy do <em>source/_includes/custom/head.html</em>:</p>
 
 <pre><code>&lt;script type="text/x-mathjax-config"&gt;
 MathJax.Hub.Config({
@@ -290,18 +180,59 @@ i wszystko jasne!</p>
 <p>Więcej wzorów jest na portalu <a href="http://www.mathjax.org/">MathJax</a>
 w dziale <a href="http://www.mathjax.org/demos/tex-samples/">TeX Samples</a>.</p>
 </div>
+
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Włodek Bzyl</span></span>
+
+      
+
+
+
+
+
+
+
+
   
 
 
-    </article>
+<time datetime="2012-02-02T23:45:00+01:00" pubdate data-updated="true">2012-02-02</time>
+      
+
+<span class="categories">
   
-  <div class="pagination">
+    <a class='category' href='/ppn/blog/categories/math-notation/'>math notation</a>, <a class='category' href='/ppn/blog/categories/mathjax/'>mathjax</a>, <a class='category' href='/ppn/blog/categories/tex/'>tex</a>
+  
+</span>
+
+
+    </p>
     
-    <a href="/ppn/blog/archives">Blog Archives</a>
-    
-  </div>
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://wbzyl.github.com/ppn/blog/2012/02/02/dodajemy-mathjax/" data-via="wbzyl" data-counturl="http://wbzyl.github.com/ppn/blog/2012/02/02/dodajemy-mathjax/" >Tweet</a>
+  
+  
+  
 </div>
+
+    
+    <p class="meta">
+      
+      
+        <a class="basic-alignment right" href="/ppn/blog/2012/02/17/r-na-co-dzien/" title="next Post: R na co dzień">R na co dzień &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
 <aside class="sidebar">
   
     <section>
@@ -323,7 +254,7 @@ w dziale <a href="http://www.mathjax.org/demos/tex-samples/">TeX Samples</a>.</
 <section>
   <h1>Latest Tweets</h1>
   <ul id="tweets">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   <script type="text/javascript">
     $.domReady(function(){
@@ -342,6 +273,7 @@ w dziale <a href="http://www.mathjax.org/demos/tex-samples/">TeX Samples</a>.</
 
   
 </aside>
+
 
     </div>
   </div>

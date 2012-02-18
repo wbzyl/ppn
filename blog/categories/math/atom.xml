@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: math | Przygotowywanie Publikacji Naukowych]]></title>
+  <link href="http://wbzyl.github.com/ppn/blog/categories/math/atom.xml" rel="self"/>
+  <link href="http://wbzyl.github.com/ppn/"/>
+  <updated>2012-02-18T14:38:13+01:00</updated>
+  <id>http://wbzyl.github.com/ppn/</id>
+  <author>
+    <name><![CDATA[Włodek Bzyl]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[R na co dzień]]></title>
+    <link href="http://wbzyl.github.com/ppn/blog/2012/02/17/r-na-co-dzien/"/>
+    <updated>2012-02-17T17:25:00+01:00</updated>
+    <id>http://wbzyl.github.com/ppn/blog/2012/02/17/r-na-co-dzien</id>
+    <content type="html"><![CDATA[<p>Możemy pracować na konsoli R albo korzystając z trybu <em>ESS</em> w Emacsie.</p>
+
+<p>Polecenia, które wykonujemy codziennie:</p>
+
+<p>```r
+source("hello.r")
+objects()
+ls()</p>
+
+<p>z &lt;- read.table("http://inf.ug.edu.pl/~wbzyl/r/2x2")
+z
+  V1 V2
+1  1  2
+2  3  4</p>
+
+<p>save(z)</p>
+
+<p>rm(z)
+rm(list = ls())</p>
+
+<p>load(z)</p>
+
+<p>methods(ls)
+methods(class="default")</p>
+
+<p>?ls</p>
+
+<p>x &lt;- c(1, 2, 3)
+class(x)
+  [1] "numeric"
+y &lt;- as.character(x)
+  [1] "character"
+class(y)
+y
+  [1] "1" "2" "3"
+```</p>
+
+<h3>Funkcje zwracające wektor</h3>
+
+<p>Na przykład:</p>
+
+<p>```r
+z12 &lt;- function(z) return(c(z, z<sup>2))</sup>
+x = 1:4
+matrix(z12(x), ncol=2)</p>
+
+<pre><code> [,1] [,2]
+</code></pre>
+
+<p>[1,]    1    1
+[2,]    2    4
+[3,]    3    9
+[4,]    4   16</p>
+
+<p>z12(x)</p>
+
+<p>[1]  1  2  3  4  1  4  9 16
+```</p>
+
+<h2>Praca w trybie wsadowym</h2>
+
+<p>W pliku <em>rnorm_hist.r</em> wpisano następujące instrukcje:</p>
+
+<p><code>r rnorm_hist.r
+pdf("histogram.pdf")
+hist(rnorm(1024)
+graphics.off()
+</code></p>
+
+<p>Praca w trybie wsadowym:</p>
+
+<p><code>sh
+R --vanilla rnorm_hist.r
+</code></p>
+]]></content>
+  </entry>
+  
+</feed>
