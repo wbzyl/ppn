@@ -32,26 +32,36 @@ Setup Octopress:
 
     git clone git://github.com/imathis/octopress.git ppn-pages
     cd ppn-pages
-    bundle install --path=.gems --binstubs
-    rake install
 
-Dopisujemy katalog */.gems* do pliku *.gitignore*.
+Dopisujemy katalog */.gems* do pliku *.gitignore* i instalujemy gemy:
+
+    bundle install --path=.gems --binstubs
+
+Instalujemy domyślny wygląd (*theme*):
+
+    bin/rake install # copies the default theme into the path of Jekyll's generator
 
 Deploying with Github Project pages (gh-pages):
 
-    rake setup_github_pages
+    bin/rake setup_github_pages
+
+Na prośbę o wpisanie url-a:
+
     Enter the read/write url for your repository:
 
-Wpisujemy:
+wpisujemy:
 
     git@github.com:wbzyl/ppn.git
 
-Na koniec wykonujemy:
+Kończymy instalację wykonując polecenie:
 
     bin/rake deploy
 
-I już! Gotowe. Możemy wejść na stronę blog.
-(Musimy poczekać ok. 10 minut.)
+I już! Gotowe. Możemy wejść na stronę bloga:
+
+    http://wbzyl.github.com/ppn
+
+Ale musimy poczekać minutkę zanim strona pojawi się na Githubie.
 
 
 ## Konfiguracja bloga
