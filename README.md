@@ -1,7 +1,10 @@
 # Przygotowywanie publikacji naukowych
 
-* PPN Wiki – szablony, przykładowy kod, itp.
-* PPN Blog – MathJax, zapisywanie wyrażeń matematycznych, itp.
+Terminy spotkań:
+
+* marzec: 6, 13, 27
+* kwiecień: 17, 24
+* maj 15, 22, 29
 
 
 ## Blog PPN na GitHub:Pages
