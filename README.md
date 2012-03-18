@@ -2,9 +2,10 @@
 
 Terminy spotkań:
 
+* luty: 21, 28
 * marzec: 6, 13, 27
 * kwiecień: 17, 24
-* maj 15, 22, 29
+* maj 15, 22 (2 godz.)
 
 
 ## Blog PPN na GitHub:Pages
